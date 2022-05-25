@@ -1,0 +1,1018 @@
+{
+	"info": {
+		"_postman_id": "8d382966-a6a6-4620-9283-689daaf7b53c",
+		"name": "BackEnd FINAL FSteinaker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Domicilio",
+			"item": [
+				{
+					"name": "localhost:8080/domicilio/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"domicilio\":\"Trento 231\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/domicilio/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"domicilio",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/domicilio/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/domicilio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"domicilio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/domicilio/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/domicilio/borrar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"domicilio",
+								"borrar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/domicilio/editar/(nro)?nombre=(nombreEjemplo)&domicilioDireccion=(domicilioEjemplo)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/domicilio/editar/1?domicilio=Aconcagua 461",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"domicilio",
+								"editar",
+								"1"
+							],
+							"query": [
+								{
+									"key": "domicilio",
+									"value": "Aconcagua 461"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tecnologias",
+			"item": [
+				{
+					"name": "localhost:8080/tecnologias/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tecnologias\":\"JavaScript\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/tecnologias/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"tecnologias",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/tecnologias/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/tecnologias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"tecnologias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/tecnologias/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/tecnologias/borrar/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"tecnologias",
+								"borrar",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/tecnologias/editar/(nro)?tecnologias=(nombreTecnologias)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/tecnologias/editar/9?tecnologias=JavaScript",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"tecnologias",
+								"editar",
+								"9"
+							],
+							"query": [
+								{
+									"key": "tecnologias",
+									"value": "JavaScript"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "localhost:8080/usuario/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"fsteinaker@msn.com\",\r\n    \"password\":\"holamundo90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/usuario/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"usuario",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/usuario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/borrar/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"borrar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/editar/(nro)?usuario=(nombreUsuario)&contrasenia=(contrasenia)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/usuario/editar/6?email=fsteinaker&password=29091990",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"usuario",
+								"editar",
+								"6"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fsteinaker"
+								},
+								{
+									"key": "password",
+									"value": "29091990"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proyectos",
+			"item": [
+				{
+					"name": "localhost:8080/proyectos/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proyectos\":\"Calculadora cientifica\",\r\n    \"detalles\":\"Desarrollado en un proyecto en React.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/proyectos/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"proyectos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/proyectos/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/proyectos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"proyectos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/proyectos/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/proyectos/borrar/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"proyectos",
+								"borrar",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/proyectos/editar/(nro)?usuario=(nombreUsuario)&contrasenia=(contrasenia)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/proyectos/editar/11?proyectos=Calculadora&detalles=Desarrollado en un proyecto de React",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"proyectos",
+								"editar",
+								"11"
+							],
+							"query": [
+								{
+									"key": "proyectos",
+									"value": "Calculadora"
+								},
+								{
+									"key": "detalles",
+									"value": "Desarrollado en un proyecto de React"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Educacion",
+			"item": [
+				{
+					"name": "localhost:8080/educacion/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institucion\":\"EET Nro 460 G. Lehmann\",\r\n    \"fecha_inicio\":\"10-03-2004\",\r\n    \"fecha_final\":\"22-12-2008\",\r\n    \"titulo\":\"Tecnico en informatica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/educacion/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"educacion",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/educacion/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/educacion",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"educacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/educacion/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/educacion/borrar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"educacion",
+								"borrar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/educacion/editar/(nro)?fecha_final=(fecha-final)&fecha_inicio=(fecha-inicio)&institucion=(nombre_institucion)&titulo=(nombre-titulos)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/educacion/editar/2?fecha_final=01/12/2008&fecha_inicio=01/03/2004&institucion=G. Lehmman EET 460&titulo=Tec. en informatica",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"educacion",
+								"editar",
+								"2"
+							],
+							"query": [
+								{
+									"key": "fecha_final",
+									"value": "01/12/2008"
+								},
+								{
+									"key": "fecha_inicio",
+									"value": "01/03/2004"
+								},
+								{
+									"key": "institucion",
+									"value": "G. Lehmman EET 460"
+								},
+								{
+									"key": "titulo",
+									"value": "Tec. en informatica"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Experiencia Laboral",
+			"item": [
+				{
+					"name": "localhost:8080/explaboral/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empresa\":\"SMART Servicios Informaticos\",\r\n    \"fecha_inicio\":\"17-12-2018\",\r\n    \"fecha_final\":\"Actualidad\",\r\n    \"empleo_cargo\":\"Titular\",\r\n    \"detalle\":\"Responsable comercial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/explaboral/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"explaboral",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/explaboral/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/explaboral",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"explaboral"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/explaboral/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/explaboral/borrar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"explaboral",
+								"borrar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/explaboral/editar/(nro)?detalle=(nuevo-detalle)&fecha_final=(fechaFinal)&fecha_inicio=(fechaInicio)&empresa=(nombreEmpresa)&empleo_cargo=(nombreCargo)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/explaboral/editar/3?detalle=nuevo detalle&fecha_final=01/12/2008&fecha_inicio=01/03/2004&empresa=Empresa&empleo_cargo=Sector en informatica",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"explaboral",
+								"editar",
+								"3"
+							],
+							"query": [
+								{
+									"key": "detalle",
+									"value": "nuevo detalle"
+								},
+								{
+									"key": "fecha_final",
+									"value": "01/12/2008"
+								},
+								{
+									"key": "fecha_inicio",
+									"value": "01/03/2004"
+								},
+								{
+									"key": "empresa",
+									"value": "Empresa"
+								},
+								{
+									"key": "empleo_cargo",
+									"value": "Sector en informatica"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidad",
+			"item": [
+				{
+					"name": "localhost:8080/localidad/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ciudad\":\"Rafaela\",\r\n    \"provincia\":\"Santa Fe\",\r\n    \"pais\":\"Argentina\",\r\n    \"codigo_postal\":\"2300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/localidad/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"localidad",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/localidad/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/localidad",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"localidad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/localidad/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/localidad/borrar/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"localidad",
+								"borrar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/localidad/editar/(nro)?ciudad=(nombreCiudad)&codigo_postal=(codigopostal)&pais=(pais)&pronvincia=(provincia)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/localidad/editar/4?ciudad=Rafaela&codigo_postal=2300&pais=Argentina&provincia=Santa Fe",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"localidad",
+								"editar",
+								"4"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Rafaela"
+								},
+								{
+									"key": "codigo_postal",
+									"value": "2300"
+								},
+								{
+									"key": "pais",
+									"value": "Argentina"
+								},
+								{
+									"key": "provincia",
+									"value": "Santa Fe"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "localhost:8080/persona/crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apellido\":\"Steinaker\",\r\n    \"nombre\":\"Federico\",\r\n    \"edad\": 31,\r\n    \"profesion\":\"Full Stack Developer Jr.\",\r\n    \"perfil\":\"Titular de SMART Servicios Informáticos, venta de equipos e insumos para trazabilidad y codificación en industrias. Diseño y desarrollo de etiquetas autoadhesivas para pymes. Técnico en informática, reparación y mantenimiento de equipos informáticos.\",\r\n    \"fecha_nacimiento\":\"29/09/1990\",\r\n    \"telefono\":\"(03492) 15636178\",\r\n    \"correo\":\"steinaker@gmail.com\",\r\n    \"imagen\":\"assets/img/foto_cv.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/persona/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"persona",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/persona/traer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fsteinaker/persona",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/persona/delete/(nro)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/persona/borrar/16",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persona",
+								"borrar",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/persona/editar/(nro)?apellido=(apellido)&nombre=(nombre)&fecha_nacimiento=(fecha_nacimiento)&correo=(correo)&telefono=(telefono)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fsteinaker/persona/editar/17?apellido=Steinaker&nombre=Carolina&fecha_nacimiento=07/04/1986&correo=carosteinaker@gmail.com&telefono=(03492) 506506",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fsteinaker",
+								"persona",
+								"editar",
+								"17"
+							],
+							"query": [
+								{
+									"key": "apellido",
+									"value": "Steinaker"
+								},
+								{
+									"key": "nombre",
+									"value": "Carolina"
+								},
+								{
+									"key": "fecha_nacimiento",
+									"value": "07/04/1986"
+								},
+								{
+									"key": "correo",
+									"value": "carosteinaker@gmail.com"
+								},
+								{
+									"key": "telefono",
+									"value": "(03492) 506506"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
