@@ -15,4 +15,6 @@ public interface IProyectosService {
     
     public Proyectos findProyectos (Long id);
     
+    public boolean existProyectosById(Long id);
+    
 }

@@ -1,9 +1,12 @@
 package com.baseDatos.FSteinaker.controller;
 
+import com.baseDatos.FSteinaker.dto.MensajeDomicilio;
 import java.util.List;
 import com.baseDatos.FSteinaker.model.Domicilio;
 import com.baseDatos.FSteinaker.service.IDomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +31,14 @@ public class DomicilioController {
     public List<Domicilio> getDomicilio() {
         
         return interDomicilio.getDomicilio();
+    }
+    
+    @GetMapping("/domicilio/detalle/{id}")
+    public ResponseEntity<Domicilio> getOneDomicilio(@PathVariable("id") Long id){
+        if(!interDomicilio.existDomicilioById(id))
+            return new ResponseEntity(new MensajeDomicilio("El domicilio que buscas no existe."), HttpStatus.NOT_FOUND);
+        Domicilio domi = interDomicilio.findDomicilio(id);
+        return new ResponseEntity(domi, HttpStatus.OK);
     }
     
     @PostMapping ("/domicilio/crear")

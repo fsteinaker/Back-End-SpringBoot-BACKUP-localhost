@@ -15,4 +15,6 @@ public interface ILocalidadService {
     
     public Localidad findLocalidad (Long id);
     
+    public boolean existLocalidadById(Long id);
+    
 }

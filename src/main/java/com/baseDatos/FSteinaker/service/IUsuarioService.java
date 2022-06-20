@@ -15,4 +15,6 @@ public List<Usuario> getUsuario ();
     
     public Usuario findUsuario (Long id);
     
+    public boolean existUsuarioById(Long id);
+    
 }

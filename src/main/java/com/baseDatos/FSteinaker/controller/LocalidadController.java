@@ -1,8 +1,10 @@
 package com.baseDatos.FSteinaker.controller;
+import com.baseDatos.FSteinaker.dto.MensajeLocalidad;
 import com.baseDatos.FSteinaker.model.Localidad;
 import com.baseDatos.FSteinaker.service.ILocalidadService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +25,16 @@ public class LocalidadController {
     private ILocalidadService interLocalidad;
     
     @GetMapping ("/localidad")
-    public List<Localidad> getLocalidad() {
-        
-        return interLocalidad.getLocalidad();
+    public Localidad getLocalidad() {        
+        return interLocalidad.getLocalidad().get(0);
+    }
+    
+    @GetMapping("/localidad/detalle/{id}")
+    public ResponseEntity<Localidad> getExpLaboral(@PathVariable("id") Long id){
+        if(!interLocalidad.existLocalidadById(id))
+            return new ResponseEntity(new MensajeLocalidad("La localidad que buscas no existe."), HttpStatus.NOT_FOUND);
+        Localidad localidad = interLocalidad.findLocalidad(id);
+        return new ResponseEntity(localidad, HttpStatus.OK);
     }
     
     @PostMapping ("/localidad/crear")

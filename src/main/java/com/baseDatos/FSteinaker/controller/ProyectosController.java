@@ -1,8 +1,11 @@
 package com.baseDatos.FSteinaker.controller;
+import com.baseDatos.FSteinaker.dto.MensajeProyectos;
 import com.baseDatos.FSteinaker.model.Proyectos;
 import com.baseDatos.FSteinaker.service.IProyectosService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +38,14 @@ public class ProyectosController {
         return "El proyecto fue creado correctamente";
     }
     
+    @GetMapping("/proyectos/detalle/{id}")
+    public ResponseEntity<Proyectos> getOnePersona(@PathVariable("id") Long id){
+        if(!interProyectos.existProyectosById(id))
+            return new ResponseEntity(new MensajeProyectos("El proyecto que buscas no existe."), HttpStatus.NOT_FOUND);
+        Proyectos per = interProyectos.findProyectos(id);
+        return new ResponseEntity(per, HttpStatus.OK);
+    }
+    
     @DeleteMapping ("/proyectos/borrar/{id}")
     public String deleteProyectos (@PathVariable Long id) {
         
@@ -45,12 +56,16 @@ public class ProyectosController {
     @PutMapping("/proyectos/editar/{id}")
     public Proyectos updateUsuario(@PathVariable Long id,
                                  @RequestParam String proyectos,
-                                 @RequestParam String detalle){
+                                 @RequestParam String detalle,
+                                 @RequestParam String tecnologia,
+                                 @RequestParam String imagen){
         
         Proyectos pro = interProyectos.findProyectos(id);
         
         pro.setProyectos(proyectos);
         pro.setDetalle(detalle);
+        pro.setTecnologia(tecnologia);
+        pro.setImagen(imagen);
         
         interProyectos.updateProyectos(pro);
         

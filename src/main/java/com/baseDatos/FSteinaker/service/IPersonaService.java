@@ -15,4 +15,6 @@ public interface IPersonaService {
     
     public Persona findPersona (Long id);
     
+    public boolean existPersonaById(Long id);
+    
 }

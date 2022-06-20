@@ -1,9 +1,12 @@
 package com.baseDatos.FSteinaker.controller;
 
+import com.baseDatos.FSteinaker.dto.MensajeSkillsHabilidades;
 import com.baseDatos.FSteinaker.model.Habilidad;
 import com.baseDatos.FSteinaker.service.IHabilidadService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +30,14 @@ public class HabilidadController {
     public List<Habilidad> getHabilidad() {
         
         return interHabilidad.getHabilidad();
+    }
+    
+    @GetMapping("/habilidad/detalle/{id}")
+    public ResponseEntity<Habilidad> getExpLaboral(@PathVariable("id") Long id){
+        if(!interHabilidad.existHabilidadById(id))
+            return new ResponseEntity(new MensajeSkillsHabilidades("La habilidad que buscas no existe."), HttpStatus.NOT_FOUND);
+        Habilidad explab = interHabilidad.findHabilidad(id);
+        return new ResponseEntity(explab, HttpStatus.OK);
     }
     
     @PostMapping ("/habilidad/crear")

@@ -15,4 +15,6 @@ public interface IEducacionService {
     
     public Educacion findEducacion (Long id);
     
+    public boolean existEducacionById(Long id);
+    
 }

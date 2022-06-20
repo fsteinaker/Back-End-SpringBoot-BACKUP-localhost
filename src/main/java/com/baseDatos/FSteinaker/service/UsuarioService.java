@@ -39,4 +39,9 @@ public class UsuarioService implements IUsuarioService {
         return usu;
         }
 
+    @Override
+    public boolean existUsuarioById(Long id) {
+        return usuRepositoty.existsById(id);
+    }
+
     }

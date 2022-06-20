@@ -38,5 +38,10 @@ public class LocalidadService implements ILocalidadService {
         Localidad localidad = localidadRepositoty.findById(id).orElse(null);
         return localidad;
     }
+
+    @Override
+    public boolean existLocalidadById(Long id) {
+        return localidadRepositoty.existsById(id);
+    }
     
 }

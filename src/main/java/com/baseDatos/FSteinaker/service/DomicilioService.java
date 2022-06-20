@@ -38,5 +38,10 @@ public class DomicilioService implements IDomicilioService {
         Domicilio domi = domiRepositoty.findById(id).orElse(null);
         return domi;
     }
+
+    @Override
+    public boolean existDomicilioById(Long id) {
+        return domiRepositoty.existsById(id);
+    }
     
 }

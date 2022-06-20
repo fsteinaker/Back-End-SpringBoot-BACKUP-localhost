@@ -15,4 +15,6 @@ public interface IDomicilioService {
     
     public Domicilio findDomicilio (Long id);
     
+    public boolean existDomicilioById(Long id);
+    
 }

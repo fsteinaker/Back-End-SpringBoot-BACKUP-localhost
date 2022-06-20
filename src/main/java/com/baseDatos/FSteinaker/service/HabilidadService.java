@@ -38,5 +38,10 @@ public class HabilidadService implements IHabilidadService {
         Habilidad habilidad = habilidadRepositoty.findById(id).orElse(null);
         return habilidad;
     }
+
+    @Override
+    public boolean existHabilidadById(Long id) {
+        return habilidadRepositoty.existsById(id);
+    }
     
 }

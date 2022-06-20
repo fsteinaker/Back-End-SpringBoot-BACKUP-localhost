@@ -15,4 +15,6 @@ public interface IHabilidadService {
     
     public Habilidad findHabilidad (Long id);
     
+    public boolean existHabilidadById(Long id);
+    
 }

@@ -38,5 +38,10 @@ public class EducacionService implements IEducacionService {
         Educacion domi = eduRepositoty.findById(id).orElse(null);
         return domi;
     }
+
+    @Override
+    public boolean existEducacionById(Long id) {
+        return eduRepositoty.existsById(id);
+    }
     
 }

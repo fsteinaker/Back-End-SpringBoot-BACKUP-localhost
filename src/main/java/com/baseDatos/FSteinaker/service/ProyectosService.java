@@ -38,5 +38,10 @@ public class ProyectosService implements IProyectosService {
         Proyectos pro = proRepositoty.findById(id).orElse(null);
         return pro;
     }
+
+    @Override
+    public boolean existProyectosById(Long id) {
+        return proRepositoty.existsById(id);
+    }
     
 }

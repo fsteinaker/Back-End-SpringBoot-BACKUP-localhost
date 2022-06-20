@@ -1,8 +1,11 @@
 package com.baseDatos.FSteinaker.controller;
+import com.baseDatos.FSteinaker.dto.MensajeEducacion;
 import com.baseDatos.FSteinaker.model.Educacion;
 import com.baseDatos.FSteinaker.service.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +29,14 @@ public class EducacionController {
     public List<Educacion> getEducacion() {
         
         return interEducacion.getEducacion();
+    }
+    
+    @GetMapping("/educacion/detalle/{id}")
+    public ResponseEntity<Educacion> getOneEducacion(@PathVariable("id") Long id){
+        if(!interEducacion.existEducacionById(id))
+            return new ResponseEntity(new MensajeEducacion("El título educativo que buscas no existe."), HttpStatus.NOT_FOUND);
+        Educacion edu = interEducacion.findEducacion(id);
+        return new ResponseEntity(edu, HttpStatus.OK);
     }
     
     @PostMapping ("/educacion/crear")

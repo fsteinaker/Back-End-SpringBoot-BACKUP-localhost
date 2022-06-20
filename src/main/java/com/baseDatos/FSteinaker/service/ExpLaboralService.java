@@ -38,5 +38,10 @@ public class ExpLaboralService implements IExpLaboralService {
         ExpLaboral explab = explabRepositoty.findById(id).orElse(null);
         return explab;
     }
+
+    @Override
+    public boolean existExpLaboralById(Long id) {
+        return explabRepositoty.existsById(id);
+    }
     
 }

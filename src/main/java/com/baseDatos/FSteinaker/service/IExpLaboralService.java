@@ -15,4 +15,6 @@ public interface IExpLaboralService {
     
     public ExpLaboral findExpLaboral (Long id);
     
+    public boolean existExpLaboralById(Long id);
+    
 }

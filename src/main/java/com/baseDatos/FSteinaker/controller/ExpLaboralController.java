@@ -1,8 +1,11 @@
 package com.baseDatos.FSteinaker.controller;
+import com.baseDatos.FSteinaker.dto.MensajeExperiencia;
 import com.baseDatos.FSteinaker.model.ExpLaboral;
 import com.baseDatos.FSteinaker.service.IExpLaboralService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +26,16 @@ public class ExpLaboralController {
     private IExpLaboralService interExpLaboral;
     
     @GetMapping ("/explaboral")
-    public List<ExpLaboral> getExpLaboral() {
-        
-        return interExpLaboral.getExpLaboral();
+    public List<ExpLaboral> getExpLaboral() {        
+        return interExpLaboral.getExpLaboral();        
+    }
+    
+    @GetMapping("/explaboral/detalle/{id}")
+    public ResponseEntity<ExpLaboral> getExpLaboral(@PathVariable("id") Long id){
+        if(!interExpLaboral.existExpLaboralById(id))
+            return new ResponseEntity(new MensajeExperiencia("El antecedente laboral que buscas no existe."), HttpStatus.NOT_FOUND);
+        ExpLaboral explab = interExpLaboral.findExpLaboral(id);
+        return new ResponseEntity(explab, HttpStatus.OK);
     }
     
     @PostMapping ("/explaboral/crear")
