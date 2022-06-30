@@ -55,7 +55,7 @@ public class HabilidadController {
     }    
  
     @PutMapping("/habilidad/editar/{id}")
-    public Habilidad  updateHabilidad (@PathVariable Long id,
+    public Habilidad updateHabilidad (@PathVariable Long id,
                                  @RequestParam String tipo,
                                  @RequestParam String nivel,
                                  @RequestParam String detalle,

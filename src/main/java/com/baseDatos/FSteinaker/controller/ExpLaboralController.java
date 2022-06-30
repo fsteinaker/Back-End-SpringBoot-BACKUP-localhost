@@ -53,27 +53,9 @@ public class ExpLaboralController {
     }    
  
     @PutMapping("/explaboral/editar/{id}")
-    public ExpLaboral updateExpLaboral(@PathVariable Long id,
-                                 @RequestParam String empleo_cargo,
-                                 @RequestParam String empresa,
-                                 @RequestParam String fecha_inicio,
-                                 @RequestParam String fecha_final,
-                                 @RequestParam String detalle,
-                                 @RequestParam String imagen){
-        
-        ExpLaboral explab = interExpLaboral.findExpLaboral(id);
-        
-        explab.setEmpleo_cargo(empleo_cargo);
-        explab.setEmpresa(empresa);
-        explab.setDetalle(detalle);
-        explab.setFecha_inicio(fecha_inicio);
-        explab.setFecha_final(fecha_final);
-        explab.setImagen(imagen);
-        
+    public ResponseEntity<?> updateExpLaboral (@RequestBody ExpLaboral explab){
         interExpLaboral.updateExpLaboral(explab);
-        
-        return explab;
-        
+        return new ResponseEntity(new MensajeExperiencia("experiencia editada con exito"), HttpStatus.OK);
     }
     
 }
