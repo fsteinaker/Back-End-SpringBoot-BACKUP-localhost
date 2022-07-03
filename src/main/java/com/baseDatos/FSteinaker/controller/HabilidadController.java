@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -53,25 +52,11 @@ public class HabilidadController {
         interHabilidad.deleteHabilidad(id);
         return "La habilidad fue eliminada correctamente";
     }    
- 
+    
     @PutMapping("/habilidad/editar/{id}")
-    public Habilidad updateHabilidad (@PathVariable Long id,
-                                 @RequestParam String tipo,
-                                 @RequestParam String nivel,
-                                 @RequestParam String detalle,
-                                 @RequestParam String imagen){
-        
-        Habilidad habilidad = interHabilidad.findHabilidad(id);
-        
-        habilidad.setTipo(tipo);
-        habilidad.setNivel(nivel);
-        habilidad.setDetalle(detalle);
-        habilidad.setImagen(imagen);
-        
+    public ResponseEntity<?> updateHabilidad (@RequestBody Habilidad habilidad){
         interHabilidad.updateHabilidad(habilidad);
-        
-        return habilidad;
-        
+        return new ResponseEntity(new MensajeSkillsHabilidades("habilidad editada con exito"), HttpStatus.OK);
     }
     
 }

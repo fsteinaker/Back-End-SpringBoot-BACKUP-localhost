@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -56,17 +55,9 @@ public class DomicilioController {
     }    
  
     @PutMapping("/domicilio/editar/{id}")
-    public Domicilio updatePersona(@PathVariable Long id,
-                                 @RequestParam String domicilio){
-        
-        Domicilio domi = interDomicilio.findDomicilio(id);
-        
-        domi.setDomicilio(domicilio);
-        
+    public ResponseEntity<?> updateDomicilio (@RequestBody Domicilio domi){
         interDomicilio.updateDomicilio(domi);
-        
-        return domi;
-        
+        return new ResponseEntity(new MensajeDomicilio("domicilio editado con exito"), HttpStatus.OK);
     }
     
 }

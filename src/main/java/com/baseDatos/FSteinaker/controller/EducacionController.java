@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -51,29 +50,11 @@ public class EducacionController {
         
         interEducacion.deleteEducacion(id);
         return "La institucion educativa fue eliminada correctamente";
-    }    
- 
+    }
+    
     @PutMapping("/educacion/editar/{id}")
-    public Educacion updateEducacion(@PathVariable Long id,
-                                 @RequestParam String institucion,
-                                 @RequestParam String fecha_inicio,
-                                 @RequestParam String fecha_final,
-                                 @RequestParam String titulo,
-                                 @RequestParam String detalle,
-                                 @RequestParam String imagen){
-        
-        Educacion edu = interEducacion.findEducacion(id);
-        
-        edu.setInstitucion(institucion);
-        edu.setFecha_inicio(fecha_inicio);
-        edu.setFecha_final(fecha_final);
-        edu.setTitulo(titulo);
-        edu.setDetalle(detalle);
-        edu.setImagen(imagen);
-        
+    public ResponseEntity<?> updateEducacion (@RequestBody Educacion edu){
         interEducacion.updateEducacion(edu);
-        
-        return edu;
-        
+        return new ResponseEntity(new MensajeEducacion("educacion editada con exito"), HttpStatus.OK);
     }
 }

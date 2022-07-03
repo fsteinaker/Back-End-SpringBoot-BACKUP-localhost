@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -51,24 +50,12 @@ public class ProyectosController {
         
         interProyectos.deleteProyectos(id);
         return "El proyecto fue eliminado correctamente";
-    }    
- 
+    }
+    
     @PutMapping("/proyectos/editar/{id}")
-    public Proyectos updateUsuario(@PathVariable Long id,
-                                 @RequestParam String proyectos,
-                                 @RequestParam String detalle,
-                                 @RequestParam String tecnologia,
-                                 @RequestParam String imagen){
-        
-        Proyectos pro = interProyectos.findProyectos(id);
-        
-        pro.setProyectos(proyectos);
-        pro.setDetalle(detalle);
-        pro.setTecnologia(tecnologia);
-        pro.setImagen(imagen);
-        
+    public ResponseEntity<?> updateProyectos (@RequestBody Proyectos pro){
         interProyectos.updateProyectos(pro);
-        
-        return pro;        
-    }    
+        return new ResponseEntity(new MensajeProyectos("proyecto editado con exito"), HttpStatus.OK);
+    }
+    
 }

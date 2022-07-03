@@ -50,10 +50,26 @@ public class Persona implements Serializable {
     private String correo;
     
     @NotNull
-    @Size(min = 1, max = 100, message = "No cumple con la longitud requerida.")
+    @Size(min = 1, message = "No cumple con la longitud requerida.")
+    private String linkFacebook;
+    
+    @NotNull
+    @Size(min = 1, message = "No cumple con la longitud requerida.")
+    private String linkInstagram;
+    
+    @NotNull
+    @Size(min = 1, message = "No cumple con la longitud requerida.")
+    private String linkLinkedin;
+    
+    @NotNull
+    @Size(min = 1, message = "No cumple con la longitud requerida.")
+    private String linkGithub;
+    
     private String imagen;
     
-   public void setPersona(String apellido, String nombre, int edad, String profesion, String perfil, String fecha_nacimiento, String telefono, String correo, String imagen) {
+    private String imagenFondo;
+    
+   public void setPersona(String apellido, String nombre, int edad, String profesion, String perfil, String fecha_nacimiento, String telefono, String correo, String imagen, String linkFacebook, String linkInstagram, String linkLinkedin, String linkGithub, String imagenFondo) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.edad = edad;
@@ -63,7 +79,11 @@ public class Persona implements Serializable {
         this.telefono = telefono;
         this.correo = correo;
         this.imagen = imagen;
-    }
-    
+        this.linkFacebook = linkFacebook;
+        this.linkInstagram = linkInstagram;
+        this.linkLinkedin = linkLinkedin;
+        this.linkGithub = linkGithub;
+        this.imagenFondo = imagenFondo;
+    }   
     
 }

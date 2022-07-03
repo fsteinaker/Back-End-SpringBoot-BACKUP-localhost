@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -49,25 +48,12 @@ public class LocalidadController {
         
         interLocalidad.deleteLocalidad(id);
         return "La localidad fue eliminada correctamente";
-    }   
- 
-    @PutMapping("/localidad/editar/{id}")
-    public Localidad updateLocalidad(@PathVariable Long id,
-                                 @RequestParam String ciudad,
-                                 @RequestParam String provincia,
-                                 @RequestParam String pais,
-                                 @RequestParam String codigo_postal)
-        {
-        
-        Localidad localidad = interLocalidad.findLocalidad(id);
-        
-        localidad.setCiudad(ciudad);
-        localidad.setProvincia(provincia);
-        localidad.setPais(pais);
-        localidad.setCodigo_postal(codigo_postal);
-        
-        interLocalidad.updateLocalidad(localidad);
-        
-        return localidad;
     }
+    
+    @PutMapping("/localidad/editar/{id}")
+    public ResponseEntity<?> updateLocalidad (@RequestBody Localidad localidad){
+        interLocalidad.updateLocalidad(localidad);
+        return new ResponseEntity(new MensajeLocalidad("localidad editada con exito"), HttpStatus.OK);
+    }
+    
 }
