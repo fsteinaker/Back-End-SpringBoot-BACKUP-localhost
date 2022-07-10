@@ -65,11 +65,31 @@ public class Persona implements Serializable {
     @Size(min = 1, message = "No cumple con la longitud requerida.")
     private String linkGithub;
     
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String domicilio;
+    
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String ciudad;
+    
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String provincia;
+    
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    private String pais;
+    
+    @NotNull
+    @Size(min = 1, max = 10, message = "no cumple con la longitud")
+    private String codigo_postal;
+    
     private String imagen;
     
     private String imagenFondo;
     
-   public void setPersona(String apellido, String nombre, int edad, String profesion, String perfil, String fecha_nacimiento, String telefono, String correo, String imagen, String linkFacebook, String linkInstagram, String linkLinkedin, String linkGithub, String imagenFondo) {
+   public void setPersona(String apellido, String nombre, int edad, String profesion, String perfil, String fecha_nacimiento, String telefono, String correo, String imagen, String linkFacebook, String linkInstagram, String linkLinkedin, String linkGithub,String ciudad, String nuevoDomicilio, String provincia, String pais, String codigo_postal, String imagenFondo) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.edad = edad;
@@ -83,6 +103,11 @@ public class Persona implements Serializable {
         this.linkInstagram = linkInstagram;
         this.linkLinkedin = linkLinkedin;
         this.linkGithub = linkGithub;
+        this.ciudad = ciudad;
+        this.domicilio = nuevoDomicilio;
+        this.provincia = provincia;
+        this.pais = pais;
+        this.codigo_postal = codigo_postal;
         this.imagenFondo = imagenFondo;
     }   
     

@@ -31,13 +31,16 @@ public class Proyectos implements Serializable {
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String tecnologia;
     
+    private String linkProyecto;
+    
     private String imagen;
 
-    public void setProyectos(String proyectos, String tecnologia,String detalle, String imagen) {
+    public void setProyectos(String proyectos, String tecnologia,String detalle, String imagen, String linkProyecto) {
         this.proyectos = proyectos;
         this.detalle = detalle;
         this.tecnologia = tecnologia;
         this.imagen = imagen;
+        this.linkProyecto = linkProyecto;
     }
     
 }
